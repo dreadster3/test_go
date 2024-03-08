@@ -1,6 +1,11 @@
 {
-  "name": "test_go",
-  "description": "A new buddy project",
-  "author": "dreadster3",
-  "scripts": {}
+	"name": "test_go",
+	"description": "A new buddy project",
+	"author": "dreadster3",
+	"scripts": {
+		"build": "go build -o dist/",
+		"build:version": "go build -o dist/ -ldflags \"-X main.Version=v1.0.1\"",
+		"build:run": "buddy build && ./dist/test_go",
+		"build:run:version": "buddy build:version && ./dist/test_go"
+	}
 }
